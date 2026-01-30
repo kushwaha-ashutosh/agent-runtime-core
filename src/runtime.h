@@ -1,3 +1,6 @@
 #pragma once
 
-void run_runtime();
+class Runtime{
+public:
+    void run();
+};

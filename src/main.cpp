@@ -1,5 +1,7 @@
 #include "runtime.h"
 
 int main(){
-    run_runtime();
-    return 0;}
+    Runtime runtime;
+    runtime.run();
+    return 0;
+}

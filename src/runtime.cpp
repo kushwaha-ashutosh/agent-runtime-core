@@ -5,10 +5,10 @@
 #include "agent.h"
 #include "tools.h"
 
-void run_runtime() {
+void Runtime::run(){
     std::cout<<"Runtime started"<<std::endl;
 
-    for (int tick = 1; ; ++tick) {
+    for(int tick=1; ;++tick) {
         std::string action=agent_step(tick);
 
         std::cout<<"Agent says:"<<action<<std::endl;
