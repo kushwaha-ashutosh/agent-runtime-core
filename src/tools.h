@@ -1,4 +1,11 @@
 #pragma once
+#include <string>
 
-void run_search_tool();
-void run_summary_tool();
+class SearchTool{
+public:
+    void run();
+};
+class SummaryTool{
+public:
+    void run();
+};

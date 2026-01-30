@@ -1,10 +1,10 @@
 #include <iostream>
 #include "tools.h"
 
-void run_search_tool(){
+void SearchTool::run(){
     std::cout << "Tool: found files -> a.pdf, b.pdf" << std::endl;
 }
 
-void run_summary_tool(){
+void SummaryTool::run(){
     std::cout << "Tool: summary created" << std::endl;
 }

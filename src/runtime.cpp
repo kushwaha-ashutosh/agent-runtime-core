@@ -9,6 +9,8 @@ void Runtime::run(){
     std::cout<<"Runtime started"<<std::endl;
 
     Agent agent;
+    SearchTool search_tool;
+    SummaryTool summary_tool;
 
     for(int tick=1;tick<=MAX_STEPS;++tick){
         std::string action=agent.step(tick);
@@ -16,10 +18,10 @@ void Runtime::run(){
         std::cout<<"Agent says:"<<action<<std::endl;
 
         if(action=="search"){
-            run_search_tool();
+            search_tool.run();
        }
         else if(action=="summarize"){
-            run_summary_tool();
+            summary_tool.run();
         }
         else if(action=="done"){
             break;
