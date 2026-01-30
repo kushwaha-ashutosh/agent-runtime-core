@@ -1,13 +1,10 @@
 #include <iostream>
-
-using namespace std;
+#include "tools.h"
 
 void run_search_tool(){
-    std::cout<<"tool:found files -> a.pdf,b.pdf"<<std::endl;
-
+    std::cout << "Tool: found files -> a.pdf, b.pdf" << std::endl;
 }
 
 void run_summary_tool(){
-    std::cout<<"tool:summary created"<<std::endl;
-    
+    std::cout << "Tool: summary created" << std::endl;
 }
