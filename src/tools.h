@@ -1,11 +1,23 @@
 #pragma once
 #include <string>
 
-class SearchTool{
+
+class Tool{
 public:
-    void run();
+    virtual ~Tool()=default;
+    virtual std::string name() const=0;
+    virtual void run()=0;
 };
-class SummaryTool{
+
+// Concrete tools
+class SearchTool:public Tool{
 public:
-    void run();
+    std::string name() const override;
+    void run() override;
+};
+
+class SummaryTool:public Tool{
+public:
+    std::string name() const override;
+    void run() override;
 };
