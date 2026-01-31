@@ -3,18 +3,22 @@
 #include <vector>
 #include <exception>
 
-#include "runtime.h"
-#include "agent.h"
-#include "tools.h"
-#include "telemetry.h"
+#include "AgentRuntime.h"
+#include "Telemetry.h"
+#include "../agent/AgentInstance.h"
+#include "../tools/Tool.h"
+#include "../tools/SearchTool.h"
+#include "../tools/SummaryTool.h"
 
-void Runtime::run(){
+
+
+void AgentRuntime::run(){
     Telemetry telemetry;
     telemetry.on_runtime_start();
     
     std::cout<<"Runtime started"<<std::endl;
 
-    Agent agent;
+    AgentInstance agent;
     std::vector<Tool*> tools;
     SearchTool search_tool;
     SummaryTool summary_tool;

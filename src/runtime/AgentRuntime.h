@@ -1,6 +1,6 @@
 #pragma once
 
-class Runtime{
+class AgentRuntime{
 public:
     void run();
 

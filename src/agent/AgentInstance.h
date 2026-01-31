@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 
-class Agent{
+class AgentInstance{
 public:
-    Agent();                
+    AgentInstance();                
     std::string step();     
 private:
     enum class State{

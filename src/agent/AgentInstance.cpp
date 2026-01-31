@@ -1,8 +1,8 @@
-#include "agent.h"
+#include "AgentInstance.h"
 
-Agent::Agent() : state_(State::Init){}
+AgentInstance::AgentInstance() : state_(State::Init){}
 
-std::string Agent::step(){
+std::string AgentInstance::step(){
     if(state_==State::Init){
         state_=State::Summarize;
         return "search";
@@ -15,3 +15,4 @@ std::string Agent::step(){
 
     return "done";
 }
+

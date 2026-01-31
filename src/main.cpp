@@ -1,7 +1,7 @@
-#include "runtime.h"
+#include "runtime/AgentRuntime.h"
 
 int main(){
-    Runtime runtime;
+    AgentRuntime runtime;
     runtime.run();
     return 0;
 }
