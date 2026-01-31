@@ -1,10 +1,15 @@
 #include "agent.h"
 
-std::string Agent::step(int step){
-    if(step==1){
+Agent::Agent() : state_(State::Init){}
+
+std::string Agent::step(){
+    if(state_==State::Init){
+        state_=State::Summarize;
         return "search";
     }
-    if(step==2){
+
+    if(state_==State::Summarize){
+        state_=State::Done;
         return "summarize";
     }
 

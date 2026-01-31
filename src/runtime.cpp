@@ -13,7 +13,7 @@ void Runtime::run(){
     SummaryTool summary_tool;
 
     for(int tick=1;tick<=MAX_STEPS;++tick){
-        std::string action=agent.step(tick);
+        std::string action=agent.step();
 
         std::cout<<"Agent says:"<<action<<std::endl;
 
