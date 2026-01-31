@@ -5,8 +5,12 @@
 #include "runtime.h"
 #include "agent.h"
 #include "tools.h"
+#include "telemetry.h"
 
 void Runtime::run(){
+    Telemetry telemetry;
+    telemetry.on_runtime_start();
+    
     std::cout<<"Runtime started"<<std::endl;
 
     Agent agent;
@@ -18,6 +22,8 @@ void Runtime::run(){
     tools.push_back(&summary_tool);
 
     for(int tick=1;tick<=MAX_STEPS;++tick){
+        telemetry.on_step();
+
         std::string action=agent.step();
 
         std::cout<<"Agent says:"<<action<<std::endl;
@@ -29,10 +35,12 @@ void Runtime::run(){
         for(Tool* tool:tools){
             if(tool->name()==action){
                 tool->run();
+                telemetry.on_tool_run(tool->name());
                 break;
             }
         }
     }
      
-     std::cout<<"Runtime stopped"<<std::endl;
+    std::cout<<"Runtime stopped"<<std::endl;
+    telemetry.on_runtime_stop();
 }
